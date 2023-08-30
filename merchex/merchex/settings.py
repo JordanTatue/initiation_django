@@ -1,3 +1,4 @@
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 """
 Django settings for merchex project.
 
@@ -37,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'listings',
 ]
 
 MIDDLEWARE = [

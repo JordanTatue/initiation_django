@@ -1,0 +1,9 @@
+    name = models.fields.CharField(max_length=100)
+    genre = models.fields.CharField(max_length=50, default='')
+    biography = models.fields.CharField(max_length=1000, default='')
+    genre = models.fields.CharField(choices=Genre.choices, max_length=5, default='')
+    year_formed = models.fields.IntegerField(
+    validators=[MinValueValidator(1900), MaxValueValidator(2023)], default=''
+    )
+    active = models.fields.BooleanField(default=True)
+    official_homepage = models.fields.URLField(null=True, blank=True, default='')

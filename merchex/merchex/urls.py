@@ -14,9 +14,19 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
+
 from django.contrib import admin
 from django.urls import path
+from listings import views
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
+path('admin/', admin.site.urls),
+path('bands/', views.band_list, name='band-list'),
+path('bands/<int:id>/', views.band_detail, name = 'band-detail'), # ajouter ce motif sous notre autre motif de groupes
+path('listing/', views.listing),
+path('about-us/', views.about, name= 'about-us'),
+path('bands/', views.band_list, name='band-list'),
+path('contact-us/', views.contact, name='contact'),
+path('bands/add/', views.band_create, name='band-create'),
+path('email-sent/', views.validation, name= 'email-sent'),
 ]
